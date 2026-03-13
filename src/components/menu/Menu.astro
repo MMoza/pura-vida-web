@@ -10,104 +10,88 @@ const grouped = groupMenuByCategory(menu);
 const categories = Object.keys(grouped);
 ---
 
-<section id="carta" class="section max-w-3xl mx-auto px-4">
-
+<section id="carta" class="section max-w-3xl mx-auto px-4 py-12">
   <!-- Tabs -->
 
   <div class="menu-tabs">
-
-    {categories.map(cat => (
-
-      <a
-        href={`#cat-${cat.toLowerCase().replace(/\s+/g,"-")}`}
-        class="menu-tab"
-      >
-        {cat}
-      </a>
-
-    ))}
-
+    {
+      categories.map((cat) => (
+        <a
+          href={`#cat-${cat.toLowerCase().replace(/\s+/g, "-")}`}
+          class="menu-tab"
+        >
+          {cat}
+        </a>
+      ))
+    }
   </div>
-
 
   <!-- Categorías -->
 
   <div class="space-y-12 mt-10">
-
-    {categories.map(cat => (
-
-      <div
-        id={`cat-${cat.toLowerCase().replace(/\s+/g,"-")}`}
-        class="menu-section"
-      >
-
-        <MenuCategory
-          category={cat}
-          items={grouped[cat]}
-        />
-
-      </div>
-
-    ))}
-
+    {
+      categories.map((cat) => (
+        <div
+          id={`cat-${cat.toLowerCase().replace(/\s+/g, "-")}`}
+          class="menu-section"
+        >
+          <MenuCategory category={cat} items={grouped[cat]} />
+        </div>
+      ))
+    }
   </div>
-
 </section>
 
 <style>
   .menu-tabs {
+    position: sticky;
+    top: 88px;
 
-  position: sticky;
-  top: 88px;
+    z-index: 40;
 
-  z-index: 40;
+    display: flex;
+    gap: 0.5rem;
 
-  display: flex;
-  gap: .5rem;
+    overflow-x: auto;
 
-  overflow-x: auto;
+    padding: 0.6rem 0.4rem;
 
-  padding: .6rem .4rem;
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.85);
 
-  backdrop-filter: blur(10px);
-  background: rgba(255,255,255,0.85);
+    border-radius: 10px 10px 0 0;
 
-  border-radius: 10px;
+    scrollbar-width: none;
+  }
 
-  scrollbar-width: none;
-}
+  .menu-tab {
+    flex: none;
 
-.menu-tab {
+    font-size: 0.9rem;
+    font-weight: 500;
 
-  flex: none;
+    padding: 0.35rem 0.9rem;
 
-  font-size: .9rem;
-  font-weight: 500;
+    border-radius: 999px;
 
-  padding: .35rem .9rem;
+    background: rgba(0, 0, 0, 0.05);
 
-  border-radius: 999px;
+    white-space: nowrap;
 
-  background: rgba(0,0,0,0.05);
+    transition: all 0.2s ease;
+  }
 
-  white-space: nowrap;
+  .menu-tab:hover {
+    background: #3d8f69;
+    color: white;
+  }
 
-  transition: all .2s ease;
-}
+  .menu-tab:hover {
+    background: #3d8f69;
+    color: white;
+  }
 
-.menu-tab:hover {
-
-  background: #3d8f69;
-  color: white;
-}
-
-.menu-tab:hover {
-
-  background: #3d8f69;
-  color: white;
-}
-
-.menu-tabs::-webkit-scrollbar {
-  display: none;
-}
+  .menu-tabs::-webkit-scrollbar {
+    display: none;
+  }
 </style>

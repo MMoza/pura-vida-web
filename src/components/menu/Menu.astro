@@ -33,7 +33,7 @@ const categories = Object.keys(grouped);
       categories.map((cat) => (
         <div
           id={`cat-${cat.toLowerCase().replace(/\s+/g, "-")}`}
-          class="menu-section scroll-mt-[180px]"
+          class="menu-section scroll-mt-[150px]"
         >
           <MenuCategory category={cat} items={grouped[cat]} />
         </div>
@@ -43,49 +43,98 @@ const categories = Object.keys(grouped);
 </section>
 
 <script>
-
 const sections = [...document.querySelectorAll(".menu-section")]
 const tabs = [...document.querySelectorAll(".menu-tab")]
+const tabsContainer = document.querySelector(".menu-tabs")
 
-const HEADER_OFFSET = 140 // ajusta según header + tabs
+const HEADER_OFFSET = 140
 
-function updateActiveTab() {
+let activeId = null
+
+function setActiveTab(id){
+
+  activeId = id
+
+  let activeTab = null
+
+  tabs.forEach(tab=>{
+    const isActive = tab.getAttribute("href") === `#${id}`
+    tab.classList.toggle("active", isActive)
+    if(isActive) activeTab = tab
+  })
+
+  if(!activeTab) return
+
+  const tabRect = activeTab.getBoundingClientRect()
+  const containerRect = tabsContainer.getBoundingClientRect()
+
+  if(tabRect.left < containerRect.left || tabRect.right > containerRect.right){
+    tabsContainer.scrollTo({
+      left: activeTab.offsetLeft - tabsContainer.offsetWidth/2 + activeTab.offsetWidth/2,
+      behavior:"smooth"
+    })
+  }
+}
+
+function updateActiveTab(){
 
   let current = sections[0]
 
-  sections.forEach(section => {
-
+  sections.forEach(section=>{
     const rect = section.getBoundingClientRect()
-
-    if (rect.top <= HEADER_OFFSET) {
+    if(rect.top <= HEADER_OFFSET){
       current = section
     }
-
   })
 
-  const id = current.id
-
-  tabs.forEach(tab => {
-
-    const active = tab.getAttribute("href") === `#${id}`
-
-    tab.classList.toggle("active", active)
-
-    if (active) {
-      tab.scrollIntoView({
-        behavior: "smooth",
-        inline: "center",
-        block: "nearest"
-      })
-    }
-
-  })
+  if(current && current.id !== activeId){
+    setActiveTab(current.id)
+  }
 
 }
 
-window.addEventListener("scroll", updateActiveTab)
-updateActiveTab()
+tabs.forEach(tab=>{
 
+  tab.addEventListener("click", e=>{
+
+    e.preventDefault()
+
+    const id = tab.getAttribute("href").replace("#","")
+    const target = document.getElementById(id)
+
+    if(!target) return
+
+    const y =
+      target.getBoundingClientRect().top +
+      window.pageYOffset -
+      HEADER_OFFSET
+
+    window.scrollTo({
+      top: y,
+      behavior:"smooth"
+    })
+
+    setActiveTab(id)
+
+  })
+
+})
+
+let ticking=false
+
+window.addEventListener("scroll",()=>{
+
+  if(!ticking){
+    requestAnimationFrame(()=>{
+      updateActiveTab()
+      ticking=false
+    })
+    ticking=true
+  }
+
+})
+
+updateActiveTab()
 </script>
 
 <style>
@@ -126,16 +175,14 @@ updateActiveTab()
 
     transition: all 0.2s ease;
     scroll-behavior: smooth;
+    scroll-margin-inline: 16px;
   }
 
-  .menu-tab:hover {
-    background: #3d8f69;
-    color: white;
-  }
-
-  .menu-tab:hover {
-    background: #3d8f69;
-    color: white;
+  @media (hover: hover) {
+    .menu-tab:hover {
+      background: #3d8f69;
+      color: white;
+    }
   }
 
   .menu-tabs::-webkit-scrollbar {
@@ -145,6 +192,7 @@ updateActiveTab()
   .menu-tab.active {
     background: #3d8f69;
     color: white;
+    transform: scale(.96);
 
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
   }

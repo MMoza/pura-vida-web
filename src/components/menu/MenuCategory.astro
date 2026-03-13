@@ -6,7 +6,7 @@ const { category, items } = Astro.props;
 
 <details class="mb-6 bg-white/40 rounded-xl p-4 backdrop-blur group" open>
 
-  <summary class="menu-summary flex items-center justify-between cursor-pointer py-3 border-b border-neutral-400">
+<summary class="menu-summary sticky top-[138px] z-30 flex items-center justify-between cursor-pointer py-3 border-b border-neutral-400 bg-white/80 backdrop-blur">
 
     <h3 class="text-xl font-semibold">
       {category}
@@ -38,3 +38,10 @@ const { category, items } = Astro.props;
   </div>
 
 </details>
+
+<style>
+  .menu-summary {
+  padding-top: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+</style>

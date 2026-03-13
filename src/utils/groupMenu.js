@@ -2,15 +2,14 @@ export function groupMenuByCategory(menu) {
 
   return menu.reduce((acc, item) => {
 
-    const category = item.categoria
-
-    if (!acc[category]) {
-      acc[category] = []
+    if (!acc[item.categoria]) {
+      acc[item.categoria] = []
     }
 
-    acc[category].push(item)
+    acc[item.categoria].push(item)
 
     return acc
 
   }, {})
+
 }

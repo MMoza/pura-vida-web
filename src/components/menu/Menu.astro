@@ -5,20 +5,109 @@ import MenuCategory from "./MenuCategory.astro";
 
 const menu = await getMenu();
 
-const categories = groupMenuByCategory(menu);
+const grouped = groupMenuByCategory(menu);
+
+const categories = Object.keys(grouped);
 ---
 
-<section id="carta" class="py-16 px-4 max-w-3xl mx-auto">
+<section id="carta" class="section max-w-3xl mx-auto px-4">
 
-  <h2 class="text-3xl font-bold mb-10">
-    Carta
-  </h2>
+  <!-- Tabs -->
 
-  {Object.entries(categories).map(([category, items]) => (
-    <MenuCategory
-      category={category}
-      items={items}
-    />
-  ))}
+  <div class="menu-tabs">
+
+    {categories.map(cat => (
+
+      <a
+        href={`#cat-${cat.toLowerCase().replace(/\s+/g,"-")}`}
+        class="menu-tab"
+      >
+        {cat}
+      </a>
+
+    ))}
+
+  </div>
+
+
+  <!-- Categorías -->
+
+  <div class="space-y-12 mt-10">
+
+    {categories.map(cat => (
+
+      <div
+        id={`cat-${cat.toLowerCase().replace(/\s+/g,"-")}`}
+        class="menu-section"
+      >
+
+        <MenuCategory
+          category={cat}
+          items={grouped[cat]}
+        />
+
+      </div>
+
+    ))}
+
+  </div>
 
 </section>
+
+<style>
+  .menu-tabs {
+
+  position: sticky;
+  top: 88px;
+
+  z-index: 40;
+
+  display: flex;
+  gap: .5rem;
+
+  overflow-x: auto;
+
+  padding: .6rem .4rem;
+
+  backdrop-filter: blur(10px);
+  background: rgba(255,255,255,0.85);
+
+  border-radius: 10px;
+
+  scrollbar-width: none;
+}
+
+.menu-tab {
+
+  flex: none;
+
+  font-size: .9rem;
+  font-weight: 500;
+
+  padding: .35rem .9rem;
+
+  border-radius: 999px;
+
+  background: rgba(0,0,0,0.05);
+
+  white-space: nowrap;
+
+  transition: all .2s ease;
+}
+
+.menu-tab:hover {
+
+  background: #3d8f69;
+  color: white;
+}
+
+.menu-tab:hover {
+
+  background: #3d8f69;
+  color: white;
+}
+
+.menu-tabs::-webkit-scrollbar {
+  display: none;
+}
+</style>

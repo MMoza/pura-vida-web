@@ -33,7 +33,7 @@ const categories = Object.keys(grouped);
       categories.map((cat) => (
         <div
           id={`cat-${cat.toLowerCase().replace(/\s+/g, "-")}`}
-          class="menu-section"
+          class="menu-section scroll-mt-[180px]"
         >
           <MenuCategory category={cat} items={grouped[cat]} />
         </div>
@@ -41,6 +41,52 @@ const categories = Object.keys(grouped);
     }
   </div>
 </section>
+
+<script>
+
+const sections = [...document.querySelectorAll(".menu-section")]
+const tabs = [...document.querySelectorAll(".menu-tab")]
+
+const HEADER_OFFSET = 140 // ajusta según header + tabs
+
+function updateActiveTab() {
+
+  let current = sections[0]
+
+  sections.forEach(section => {
+
+    const rect = section.getBoundingClientRect()
+
+    if (rect.top <= HEADER_OFFSET) {
+      current = section
+    }
+
+  })
+
+  const id = current.id
+
+  tabs.forEach(tab => {
+
+    const active = tab.getAttribute("href") === `#${id}`
+
+    tab.classList.toggle("active", active)
+
+    if (active) {
+      tab.scrollIntoView({
+        behavior: "smooth",
+        inline: "center",
+        block: "nearest"
+      })
+    }
+
+  })
+
+}
+
+window.addEventListener("scroll", updateActiveTab)
+updateActiveTab()
+
+</script>
 
 <style>
   .menu-tabs {
@@ -79,6 +125,7 @@ const categories = Object.keys(grouped);
     white-space: nowrap;
 
     transition: all 0.2s ease;
+    scroll-behavior: smooth;
   }
 
   .menu-tab:hover {
@@ -93,5 +140,12 @@ const categories = Object.keys(grouped);
 
   .menu-tabs::-webkit-scrollbar {
     display: none;
+  }
+
+  .menu-tab.active {
+    background: #3d8f69;
+    color: white;
+
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
   }
 </style>

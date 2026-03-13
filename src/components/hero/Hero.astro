@@ -1,21 +1,14 @@
-<section id="inicio" class="hero-fade relative min-h-screen flex items-center justify-center text-center">
+<section id="inicio" class="relative min-h-screen flex items-center justify-center text-center">
 
   <!-- Background image -->
+  <div class="hero-image absolute inset-0 bg-cover bg-center"
+       style="background-image:url('/images/restaurante-01.jpeg')">
+  </div>
 
-  <div
-    class="absolute inset-0 bg-cover bg-center"
-    style="background-image:url('/images/restaurante-01.jpeg')"
-  ></div>
-
-  <!-- Dark overlay -->
-
-  <div class="absolute inset-0 bg-black/40"></div>
+  <div class="hero-overlay absolute inset-0"></div>
 
   <!-- Content -->
-
   <div class="relative z-10 flex flex-col items-center gap-6 px-6">
-
-    <!-- Logo -->
 
     <img
       src="/images/pura-vida-logo.jpeg"
@@ -23,10 +16,7 @@
       class="w-32 h-32 rounded-full object-cover border-4 border-white shadow-xl"
     />
 
-    <!-- Title -->
-
     <h1 class="flex flex-col items-center leading-tight">
-
       <span class="font-display text-5xl md:text-6xl text-white tracking-wide">
         Pura Vida
       </span>
@@ -34,36 +24,16 @@
       <span class="text-white text-sm md:text-base tracking-[0.25em] font-semibold mt-1">
         PISCINAS BAR
       </span>
-
     </h1>
-
-    <!-- Subtitle -->
 
     <p class="text-white/90 text-lg max-w-md">
       Donde las comidas se alargan y las copas empiezan
     </p>
 
-    <!-- CTA buttons -->
-
     <div class="flex flex-col sm:flex-row gap-4 mt-6 w-full sm:w-auto">
-
-      <a
-        href="#carta"
-        class="cta-primary"
-      >
-        Ver carta
-      </a>
-
-      <a
-        href="#reservas"
-        class="cta-secondary"
-      >
-        Reservar mesa
-      </a>
-
+      <a href="#carta" class="cta-primary">Ver carta</a>
+      <a href="#reservas" class="cta-secondary">Reservar mesa</a>
     </div>
-
-    <!-- Address -->
 
     <div class="hero-contact">
 
@@ -153,6 +123,35 @@
 .hero-whatsapp:hover .hero-arrow {
 
   transform: translateX(6px);
+}
+
+.hero-image{
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    black 0%,
+    black 40%,
+    rgba(0,0,0,0.6) 80%,
+    transparent 100%
+  );
+
+  mask-image: linear-gradient(
+    to bottom,
+    black 0%,
+    black 40%,
+    rgba(0,0,0,0.6) 80%,
+    transparent 100%
+  );
+}
+
+.hero-overlay{
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.65) 0%,
+    rgba(0,0,0,0.55) 30%,
+    rgba(0,0,0,0.35) 55%,
+    rgba(0,0,0,0.15) 75%,
+    rgba(0,0,0,0) 100%
+  );
 }
 
 </style>

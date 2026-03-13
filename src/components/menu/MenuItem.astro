@@ -8,7 +8,7 @@ const { type } = Astro.props
 ---
 
 
-<div class={`menu-item 
+<div class={`menu-item reveal
   ${item.novedad ? "menu-item-new" : ""} 
   ${item.oferta ? "menu-item-sale" : ""}
 `}>
@@ -67,6 +67,14 @@ const { type } = Astro.props
 
     padding-bottom: 0.9rem;
     padding-right: 10px;
+
+    transition: all .2s ease;
+  }
+
+  .menu-item:hover {
+
+    transform: translateX(4px);
+    background: rgba(0,0,0,0.02);
   }
 
   .menu-name {

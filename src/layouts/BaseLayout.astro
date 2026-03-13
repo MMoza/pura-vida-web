@@ -2,6 +2,7 @@
 import "../styles/global.css";
 
 const { title = "Restaurante" } = Astro.props;
+
 ---
 
 <!DOCTYPE html>
@@ -24,3 +25,20 @@ const { title = "Restaurante" } = Astro.props;
 
   </body>
 </html>
+
+<script>
+  const observer = new IntersectionObserver(entries => {
+
+  entries.forEach(entry => {
+
+    if (entry.isIntersecting) {
+      entry.target.classList.add("reveal-visible")
+    }
+
+  })
+
+})
+
+document.querySelectorAll(".reveal")
+  .forEach(el => observer.observe(el))
+</script>

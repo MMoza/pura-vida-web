@@ -45,6 +45,11 @@ body {
   font-family: var(--font-body);
   background: #eef7f1;
   color: #18181b;
+
+  background-image:
+    radial-gradient(rgba(0,0,0,0.03) 1px, transparent 1px);
+
+  background-size: 16px 16px;
 }
 
 /* headings */
@@ -127,6 +132,7 @@ h1, h2, h3 {
 .section {
   padding-top: 6rem;
   padding-bottom: 6rem;
+  scroll-margin-top: 90px;
 }
 
 /* container */
@@ -244,4 +250,18 @@ h1, h2, h3 {
 .cta-secondary:hover {
   transform: translateY(-2px);
   background: white;
+}
+
+.reveal {
+
+  opacity: 0;
+  transform: translateY(12px);
+
+  transition: all .5s ease;
+}
+
+.reveal-visible {
+
+  opacity: 1;
+  transform: translateY(0);
 }

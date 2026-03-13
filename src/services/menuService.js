@@ -3,7 +3,7 @@ export async function getMenu() {
   const url = "https://opensheet.elk.sh/1sTpLJQhatioySdVKNw_oEYJ3eCxemT_9PCM6DwVd3fU/menu"
 
   const res = await fetch(url, {
-    cache: "no-store"
+    next: { revalidate: 60 }
   })
 
   if (!res.ok) {

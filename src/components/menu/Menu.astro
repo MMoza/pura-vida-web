@@ -5,9 +5,13 @@ import MenuCategory from "./MenuCategory.astro";
 
 const menu = await getMenu();
 
-const grouped = groupMenuByCategory(menu);
+const grouped = groupMenuByCategory(menu)
 
-const categories = Object.keys(grouped);
+const categories = Object.keys(grouped).sort(
+  (a, b) =>
+    grouped[a][0].categoria_orden -
+    grouped[b][0].categoria_orden
+)
 ---
 
 <section id="carta" class="section section-bg max-w-3xl mx-auto px-4 py-12">

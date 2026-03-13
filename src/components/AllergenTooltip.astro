@@ -1,0 +1,68 @@
+---
+const { label } = Astro.props;
+---
+
+<div class="allergen-tooltip">
+
+  <slot />
+
+  <span class="tooltip-text">
+    {label}
+  </span>
+
+</div>
+
+<style>
+.allergen-tooltip {
+  position: relative;
+  display: inline-flex;
+}
+
+.tooltip-text {
+
+  position: absolute;
+  bottom: 130%;
+  left: 50%;
+  transform: translateX(-50%);
+
+  background: #18181b;
+  color: white;
+
+  font-size: 0.65rem;
+  padding: 4px 6px;
+  border-radius: 4px;
+
+  white-space: nowrap;
+
+  opacity: 0;
+  pointer-events: none;
+
+  transition: opacity .15s ease;
+}
+
+.tooltip-text::after {
+
+  content: "";
+
+  position: absolute;
+  top: 100%;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  border: 4px solid transparent;
+  border-top-color: #18181b;
+}
+
+/* desktop hover */
+
+.allergen-tooltip:hover .tooltip-text {
+  opacity: 1;
+}
+
+/* mobile touch */
+
+.allergen-tooltip:active .tooltip-text {
+  opacity: 1;
+}
+</style>

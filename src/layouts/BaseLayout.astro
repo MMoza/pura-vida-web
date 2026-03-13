@@ -1,0 +1,26 @@
+---
+import "../styles/global.css";
+
+const { title = "Restaurante" } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barrio&family=DynaPuff:wght@400..700&display=swap" rel="stylesheet">
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width" />
+  <title>{title}</title>
+</head>
+
+  <body class="min-h-screen flex flex-col font-body bg-restaurant text-neutral-900">
+
+    <main class="flex-1">
+      <slot />
+    </main>
+
+  </body>
+</html>

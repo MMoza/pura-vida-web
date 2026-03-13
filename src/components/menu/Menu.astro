@@ -1,0 +1,24 @@
+---
+import { getMenu } from "../../services/menuService";
+import { groupMenuByCategory } from "../../utils/groupMenu";
+import MenuCategory from "./MenuCategory.astro";
+
+const menu = await getMenu();
+
+const categories = groupMenuByCategory(menu);
+---
+
+<section id="carta" class="py-16 px-4 max-w-3xl mx-auto">
+
+  <h2 class="text-3xl font-bold mb-10">
+    Carta
+  </h2>
+
+  {Object.entries(categories).map(([category, items]) => (
+    <MenuCategory
+      category={category}
+      items={items}
+    />
+  ))}
+
+</section>

@@ -1,0 +1,158 @@
+<section id="inicio" class="hero-fade relative min-h-screen flex items-center justify-center text-center">
+
+  <!-- Background image -->
+
+  <div
+    class="absolute inset-0 bg-cover bg-center"
+    style="background-image:url('/images/hero-bg-image.avif')"
+  ></div>
+
+  <!-- Dark overlay -->
+
+  <div class="absolute inset-0 bg-black/40"></div>
+
+  <!-- Content -->
+
+  <div class="relative z-10 flex flex-col items-center gap-6 px-6">
+
+    <!-- Logo -->
+
+    <img
+      src="/images/pura-vida-logo.jpeg"
+      alt="Pura Vida"
+      class="w-32 h-32 rounded-full object-cover border-4 border-white shadow-xl"
+    />
+
+    <!-- Title -->
+
+    <h1 class="flex flex-col items-center leading-tight">
+
+      <span class="font-display text-5xl md:text-6xl text-white tracking-wide">
+        Pura Vida
+      </span>
+
+      <span class="text-white text-sm md:text-base tracking-[0.25em] font-semibold mt-1">
+        PISCINAS BAR
+      </span>
+
+    </h1>
+
+    <!-- Subtitle -->
+
+    <p class="text-white/90 text-lg max-w-md">
+      Donde las comidas se alargan y las copas empiezan
+    </p>
+
+    <!-- CTA buttons -->
+
+    <div class="flex flex-col sm:flex-row gap-4 mt-6 w-full sm:w-auto">
+
+      <a
+        href="#carta"
+        class="cta-primary"
+      >
+        Ver carta
+      </a>
+
+      <a
+        href="#reservas"
+        class="cta-secondary"
+      >
+        Reservar mesa
+      </a>
+
+    </div>
+
+    <!-- Address -->
+
+    <div class="hero-contact">
+
+      <a
+        href="https://maps.google.com/?q=Av.+de+la+Constitución+Madroñera"
+        target="_blank"
+        class="hero-address"
+      >
+        Av. de la Constitución, S/N  
+        <span class="hero-location">Madroñera (Cáceres)</span>
+      </a>
+
+      <a
+        href="https://wa.me/+34686110597"
+        target="_blank"
+        class="hero-whatsapp group"
+      >
+        Contacta con nosotros
+        <span class="hero-arrow">→</span>
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+<style>
+
+.hero-contact {
+  margin-top: 1.75rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+
+  font-size: 0.9rem;
+}
+
+.hero-address {
+  color: rgba(255,255,255,0.85);
+  text-decoration: none;
+  text-align: center;
+
+  transition: opacity .2s ease;
+}
+
+.hero-address:hover {
+  opacity: 0.8;
+}
+
+.hero-location {
+  display: block;
+  font-weight: 500;
+}
+
+.hero-whatsapp {
+
+  display: inline-flex;
+  align-items: center;
+  gap: .35rem;
+
+  margin-top: .4rem;
+
+  color: white;
+  font-weight: 600;
+
+  text-decoration: none;
+
+  transition: opacity .2s ease;
+}
+
+.hero-whatsapp:hover {
+  opacity: .85;
+}
+
+/* arrow */
+
+.hero-arrow {
+
+  display: inline-block;
+
+  transition: transform .2s ease;
+}
+
+.hero-whatsapp:hover .hero-arrow {
+
+  transform: translateX(6px);
+}
+
+</style>

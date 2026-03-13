@@ -11,6 +11,9 @@ const categories = Object.keys(grouped);
 ---
 
 <section id="carta" class="section max-w-3xl mx-auto px-4 py-12">
+
+  <div class="menu-indicator"></div>
+
   <!-- Tabs -->
 
   <div class="menu-tabs">
@@ -33,7 +36,7 @@ const categories = Object.keys(grouped);
       categories.map((cat) => (
         <div
           id={`cat-${cat.toLowerCase().replace(/\s+/g, "-")}`}
-          class="menu-section scroll-mt-[150px]"
+          class="menu-section"
         >
           <MenuCategory category={cat} items={grouped[cat]} />
         </div>
@@ -47,8 +50,7 @@ const sections = [...document.querySelectorAll(".menu-section")]
 const tabs = [...document.querySelectorAll(".menu-tab")]
 const tabsContainer = document.querySelector(".menu-tabs")
 
-const HEADER_OFFSET = 140
-
+const HEADER_OFFSET = 120
 let activeId = null
 
 function setActiveTab(id){
@@ -139,24 +141,40 @@ updateActiveTab()
 
 <style>
   .menu-tabs {
+
     position: sticky;
     top: 88px;
-
     z-index: 40;
 
     display: flex;
-    gap: 0.5rem;
+    gap: .5rem;
 
     overflow-x: auto;
 
-    padding: 0.6rem 0.4rem;
+    padding: .6rem .4rem;
 
     backdrop-filter: blur(10px);
-    background: rgba(255, 255, 255, 0.85);
+    background: rgba(255,255,255,0.85);
 
     border-radius: 10px 10px 0 0;
 
     scrollbar-width: none;
+  }
+
+  .menu-indicator {
+
+    position: absolute;
+
+    height: 3px;
+    bottom: 4px;
+
+    background: #3d8f69;
+
+    border-radius: 3px;
+
+    transition:
+      transform .25s ease,
+      width .25s ease;
   }
 
   .menu-tab {

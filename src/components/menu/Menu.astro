@@ -154,7 +154,6 @@ updateActiveTab()
 
 <style>
   .menu-tabs {
-
     position: sticky;
     top: 88px;
     z-index: 40;
@@ -163,6 +162,7 @@ updateActiveTab()
     gap: .5rem;
 
     overflow-x: auto;
+    overflow-y: hidden;
 
     padding: .6rem .4rem;
 
@@ -171,7 +171,13 @@ updateActiveTab()
 
     border-radius: 10px 10px 0 0;
 
-    scrollbar-width: none;
+    scrollbar-width: none;          /* Firefox */
+    -ms-overflow-style: none;       /* IE/Edge antiguo */
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .menu-tabs::-webkit-scrollbar {
+    display: none;                  /* Chrome / Safari */
   }
 
   .menu-indicator {

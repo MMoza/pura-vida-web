@@ -102,14 +102,15 @@ sections.forEach(section => observer.observe(section))
 <script>
 
 const header = document.querySelector("#site-header")
+const headerInner = header.querySelector("div")
 const logo = document.querySelector(".logo")
 
 window.addEventListener("scroll", () => {
 
   if (window.scrollY > 40) {
 
-    header.classList.add("py-2")
-    header.classList.remove("py-4")
+    headerInner.classList.add("py-2")
+    headerInner.classList.remove("py-4")
 
     logo.classList.remove("w-16","h-16")
     logo.classList.add("w-10","h-10")
@@ -118,13 +119,13 @@ window.addEventListener("scroll", () => {
 
   } else {
 
-    header.classList.add("py-4")
-    header.classList.remove("py-2")
+    headerInner.classList.add("py-4")
+    headerInner.classList.remove("py-2")
 
     logo.classList.remove("w-10","h-10")
     logo.classList.add("w-16","h-16")
 
-    header?.classList.remove("shadow-md")
+    header.classList.remove("shadow-md")
 
   }
 

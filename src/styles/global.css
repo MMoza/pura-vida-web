@@ -38,7 +38,8 @@
 /* ---------------- */
 
 html {
-  scroll-behavior: smooth;
+  overflow-y: scroll;
+  scrollbar-gutter: stable;
 }
 
 body {
@@ -50,6 +51,8 @@ body {
     radial-gradient(rgba(0,0,0,0.03) 1px, transparent 1px);
 
   background-size: 16px 16px;
+  overflow-x: clip;
+  overflow-y: clip;
 }
 
 /* headings */
@@ -57,6 +60,7 @@ body {
 h1, h2, h3 {
   font-family: var(--font-heading);
   letter-spacing: -0.02em;
+  overflow-x: clip;
 }
 
 /* ---------------- */

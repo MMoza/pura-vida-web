@@ -29,7 +29,7 @@ export async function getMenu() {
       nombre: item.nombre,
       descripcion: item.descripcion,
       precio: Number(item.precio),
-      orden: Number(item.orden),
+      orden: Number(item.orden) || 999,
 
       disponible: String(item.disponible).toLowerCase() === "true",
 

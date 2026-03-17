@@ -18,18 +18,20 @@ export async function getMenu() {
     "Croquetas": 3,
     "Del Sur": 4,
     "Carnes ibéricas": 5,
-    "Tostas": 6
+    "Tostas": 6,
+    "Fuera de Carta": 998,
+    "Postres": 999
   }
 
   return data
     .map(item => ({
       categoria: item.categoria,
-      categoria_orden: categoriaOrden[item.categoria] ?? 999,
+      categoria_orden: categoriaOrden[item.categoria] ?? 997,
 
       nombre: item.nombre,
       descripcion: item.descripcion,
       precio: Number(item.precio),
-      orden: Number(item.orden) || 999,
+      orden: Number(item.orden) || 997,
 
       disponible: String(item.disponible).toLowerCase() === "true",
 

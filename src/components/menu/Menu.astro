@@ -49,7 +49,7 @@ const categories = Object.keys(grouped).sort(
     }
   </div>
 
-  <!-- Categor�as -->
+  <!-- Categorías -->
 
   <div class="space-y-12 mt-10">
     {
@@ -63,6 +63,25 @@ const categories = Object.keys(grouped).sort(
       ))
     }
   </div>
+
+  <!-- Bodega -->
+  <div class="text-center mt-20">
+    <a 
+      class="group inline-flex items-center gap-2 text-lg md:text-base font-medium text-gray-900 
+            transition-all duration-300 hover:text-black cursor-pointer"
+      href="/bodega"
+    >
+      <span class="relative">
+        Ver bodega
+        <span class="absolute left-0 -bottom-1 h-[2px] w-0 bg-black transition-all duration-300 group-hover:w-full"></span>
+      </span>
+
+      <span class="hero-arrow transition-transform duration-300 group-hover:translate-x-2">
+        →
+      </span>
+    </a>
+  </div>
+
 </section>
 
 <script>

@@ -1,43 +1,45 @@
+---
+const isHome = Astro.url.pathname === "/";
+const link = (hash) => isHome ? hash : `/${hash}`;
+---
+
 <header id="site-header"
   class="sticky top-0 z-50 backdrop-blur-xl bg-white/50 border-b border-white/30 transition-all duration-300">
+
   <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between transition-all duration-300">
 
     <!-- Logo -->
+    <a href={link("#inicio")} class="flex items-center gap-3 group">
 
-    <a href="#inicio" class="flex items-center gap-3 group">
-
-    <img
+      <img
         src="/images/pura-vida-logo.jpeg"
         alt="Pura Vida"
         class="logo w-10 h-10 rounded-full object-cover border border-white shadow-sm transition-all duration-300"
-    />
+      />
 
-<span class="flex flex-col items-center leading-none">
+      <span class="flex flex-col items-center leading-none">
+        <span class="text-brand-700 font-display text-2xl tracking-wide group-hover:opacity-80 transition leading-none">
+          Pura Vida
+        </span>
 
-    <span class="text-brand-700 font-display text-2xl tracking-wide group-hover:opacity-80 transition leading-none">
-        Pura Vida
-    </span>
-
-    <span class="text-brand-700/80 text-[10px] tracking-[0.2em] font-semibold">
-        PISCINAS BAR
-    </span>
-
-</span>
+        <span class="text-brand-700/80 text-[10px] tracking-[0.2em] font-semibold">
+          PISCINAS BAR
+        </span>
+      </span>
 
     </a>
 
     <!-- Desktop nav -->
-
     <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
 
-      <a href="#inicio" class="nav-link">Inicio</a>
-      <a href="#carta" class="nav-link">Carta</a>
-      <a href="#reservas" class="nav-link">Reservas</a>
+      <a href={link("#inicio")} class="nav-link">Inicio</a>
+      <a href={link("#carta")} class="nav-link">Carta</a>
+      <a href="/bodega" class="nav-link">Bodega</a>
+      <a href={link("#reservas")} class="nav-link">Reservas</a>
 
     </nav>
 
     <!-- Mobile button -->
-
     <button id="menu-btn" class="md:hidden text-2xl">
       ☰
     </button>
@@ -45,14 +47,14 @@
   </div>
 
   <!-- Mobile menu -->
-
   <div id="mobile-menu" class="hidden md:hidden border-t border-white/30">
 
     <nav class="flex flex-col px-6 py-4 gap-4 text-sm font-medium">
 
-      <a href="#inicio" class="nav-link">Inicio</a>
-      <a href="#carta" class="nav-link">Carta</a>
-      <a href="#reservas" class="nav-link">Reservas</a>
+      <a href={link("#inicio")} class="nav-link">Inicio</a>
+      <a href={link("#carta")} class="nav-link">Carta</a>
+      <a href="/bodega" class="nav-link">Bodega</a>
+      <a href={link("#reservas")} class="nav-link">Reservas</a>
 
     </nav>
 

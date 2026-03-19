@@ -74,7 +74,8 @@ h1, h2, h3 {
     #eef7f1 0%,
     #e7f2ec 100%
   );
-  position: relative
+  position: relative;
+  isolation: isolate;
 }
 
 .bg-restaurant::before,
@@ -83,6 +84,7 @@ h1, h2, h3 {
   position: absolute;
   inset: 0;
   z-index: -1;
+  pointer-events: none;
 }
 
 /* organic gradient blobs */
@@ -107,6 +109,27 @@ h1, h2, h3 {
 
   filter: blur(80px);
   animation: bgFloat 20s ease-in-out infinite;
+}
+
+.bg-restaurant::after {
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(238, 247, 241, 0) 18%,
+      rgba(238, 247, 241, 0.18) 52%,
+      #eef7f1 100%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(238, 247, 241, 0.08),
+      rgba(231, 242, 236, 0.18)
+    ),
+    url("/images/bg-restaurant-web.avif");
+  background-size: auto, auto, 280px;
+  background-position: center, center, top left;
+  background-repeat: no-repeat, no-repeat, repeat;
+  opacity: 0.1;
+  filter: saturate(0.7) blur(0.4px);
 }
 
 /* subtle floating motion */

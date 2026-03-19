@@ -4,7 +4,7 @@ import MenuItem from "./MenuItem.astro";
 const { category, items } = Astro.props;
 ---
 
-<details class="mb-6 bg-white/40 rounded-xl p-4 backdrop-blur group" open>
+<details class="mb-2 bg-white/40 rounded-xl p-4 backdrop-blur group">
   <summary
   class="menu-summary sticky top-[138px] z-30 flex items-center justify-between cursor-pointer py-3 px-4 border-b border-neutral-400 bg-white/80 backdrop-blur -mx-4"
 >
@@ -38,6 +38,22 @@ const { category, items } = Astro.props;
   .menu-summary {
     padding-top: 10px;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  }
+
+  details:not([open]) .chevron {
+    animation: chevronPulse 1.8s ease-in-out infinite;
+  }
+
+  @keyframes chevronPulse {
+    0%, 100% {
+      transform: translateY(0) scale(1);
+      opacity: 0.6;
+    }
+
+    50% {
+      transform: translateY(2px) scale(1.08);
+      opacity: 1;
+    }
   }
 
   .sticky-category {

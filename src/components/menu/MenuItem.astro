@@ -19,6 +19,13 @@ const { type } = Astro.props
 
       {item.novedad && <span class="menu-badge">NEW</span>}
       {item.oferta && <span class="menu-badge-sale">OFERTA</span>}
+      {
+        item.localProduct && (
+          <AllergenTooltip label="Producto fresco 100% Extremeño">
+            <span class="menu-badge-extrem" aria-label="Producto fresco 100% Extremeño"></span>
+          </AllergenTooltip>
+        )
+      }
     </h4>
     </div>
 
@@ -161,6 +168,30 @@ const { type } = Astro.props
 
     padding: .18rem .4rem;
     border-radius: 6px;
+  }
+
+  .menu-badge-extrem {
+    margin-left: 0.4rem;
+    width: 0.9rem;
+    height: 0.9rem;
+    flex: none;
+    background: linear-gradient(
+      180deg,
+      #167245 0%,
+      #167245 33.33%,
+      #f7f7f5 33.33%,
+      #f7f7f5 66.66%,
+      #1a1a1a 66.66%,
+      #1a1a1a 100%
+    );
+    border-radius: 999px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
   }
 
   @keyframes badgePulse {

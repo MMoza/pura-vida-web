@@ -40,7 +40,9 @@ export async function getMenu() {
       oferta: String(item.oferta).toLowerCase() === "true",
       precio_anterior: item.precio_anterior ? Number(item.precio_anterior) : null,
 
-      novedad: String(item.novedad).toLowerCase() === "true"
+      novedad: String(item.novedad).toLowerCase() === "true",
+      localProduct:
+        String(item["extrem-product"] ?? item.localProduct ?? "").toLowerCase() === "true"
     }))
     .filter(item => item.disponible)
 

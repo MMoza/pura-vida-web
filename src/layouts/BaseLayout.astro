@@ -18,6 +18,12 @@ const { title = "Restaurante" } = Astro.props;
   <meta name="keywords" content="restaurante Madroñera, bar Cáceres, carta digital QR, Pura Vida Piscinas Bar" />
   <meta name="author" content="Miguel Ángel Moza" />
 
+  <!-- SEO Local -->
+  <meta name="geo.region" content="ES-CC" />
+  <meta name="geo.placename" content="Madroñera, Cáceres" />
+  <meta name="geo.position" content="39.425; -5.758" />
+  <meta name="ICBM" content="39.425, -5.758" />
+
   <!-- Open Graph (LinkedIn, WhatsApp, etc) -->
   <meta property="og:title" content="Pura Vida Piscinas Bar" />
   <meta property="og:description" content="Restaurante y bar de copas en Madroñera (Cáceres). Consulta la carta digital o reserva desde tu móvil." />
@@ -38,6 +44,23 @@ const { title = "Restaurante" } = Astro.props;
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barrio&family=DynaPuff:wght@400..700&display=swap" rel="stylesheet">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "name": "Pura Vida Piscinas Bar",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Madroñera",
+      "addressRegion": "Cáceres",
+      "addressCountry": "ES"
+    },
+    "servesCuisine": "Mediterranean",
+    "url": "https://pura-vida-web.vercel.app/"
+  }
+  </script>
+
 </head>
 
   <body class="min-h-screen flex flex-col font-body bg-restaurant text-neutral-900">

@@ -8,13 +8,36 @@ const { title = "Restaurante" } = Astro.props;
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Barrio&family=DynaPuff:wght@400..700&display=swap" rel="stylesheet">
-
+  <!-- Básico -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width" />
   <title>{title}</title>
+
+  <!-- SEO -->
+  <meta name="description" content="Pura Vida Piscinas Bar en Madroñera (Cáceres). Carta digital accesible mediante QR, reservas y ambiente de bar y copas." />
+  <meta name="keywords" content="restaurante Madroñera, bar Cáceres, carta digital QR, Pura Vida Piscinas Bar" />
+  <meta name="author" content="Miguel Ángel Moza" />
+
+  <!-- Open Graph (LinkedIn, WhatsApp, etc) -->
+  <meta property="og:title" content="Pura Vida Piscinas Bar" />
+  <meta property="og:description" content="Restaurante y bar de copas en Madroñera (Cáceres). Consulta la carta digital o reserva desde tu móvil." />
+  <meta property="og:image" content="https://pura-vida-web.vercel.app/images/pura-vida-logo.jpeg" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="es_ES" />
+
+  <!-- Twitter (opcional pero recomendable) -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Pura Vida Piscinas Bar" />
+  <meta name="twitter:description" content="Carta digital y reservas en Madroñera (Cáceres)." />
+  <meta name="twitter:image" content="https://pura-vida-web.vercel.app/images/pura-vida-logo.jpeg" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="https://pura-vida-web.vercel.app/images/pura-vida-logo.jpeg" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barrio&family=DynaPuff:wght@400..700&display=swap" rel="stylesheet">
 </head>
 
   <body class="min-h-screen flex flex-col font-body bg-restaurant text-neutral-900">

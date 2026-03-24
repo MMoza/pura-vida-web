@@ -1,65 +1,23 @@
 ---
 import "../styles/global.css";
+import SEO from "../components/SEO.astro";
 
-const { title = "Restaurante" } = Astro.props;
-
+const { title } = Astro.props;
 ---
 
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <!-- Básico -->
+
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width" />
-  <title>{title}</title>
 
-  <!-- SEO -->
-  <meta name="description" content="Pura Vida Piscinas Bar en Madroñera (Cáceres). Carta digital accesible mediante QR, reservas y ambiente de bar y copas." />
-  <meta name="keywords" content="restaurante Madroñera, bar Cáceres, carta digital QR, Pura Vida Piscinas Bar" />
-  <meta name="author" content="Miguel Ángel Moza" />
-
-  <!-- SEO Local -->
-  <meta name="geo.region" content="ES-CC" />
-  <meta name="geo.placename" content="Madroñera, Cáceres" />
-  <meta name="geo.position" content="39.425; -5.758" />
-  <meta name="ICBM" content="39.425, -5.758" />
-
-  <!-- Open Graph (LinkedIn, WhatsApp, etc) -->
-  <meta property="og:title" content="Pura Vida Piscinas Bar" />
-  <meta property="og:description" content="Restaurante y bar de copas en Madroñera (Cáceres). Consulta la carta digital o reserva desde tu móvil." />
-  <meta property="og:image" content="https://pura-vida-web.vercel.app/images/pura-vida-logo.jpeg" />
-  <meta property="og:type" content="website" />
-  <meta property="og:locale" content="es_ES" />
-
-  <!-- Twitter (opcional pero recomendable) -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Pura Vida Piscinas Bar" />
-  <meta name="twitter:description" content="Carta digital y reservas en Madroñera (Cáceres)." />
-  <meta name="twitter:image" content="https://pura-vida-web.vercel.app/images/pura-vida-logo.jpeg" />
-
-  <!-- Favicon -->
-  <link rel="icon" href="https://pura-vida-web.vercel.app/images/pura-vida-logo.jpeg" />
+  <SEO title={title} />
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barrio&family=DynaPuff:wght@400..700&display=swap" rel="stylesheet">
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Restaurant",
-    "name": "Pura Vida Piscinas Bar",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Madroñera",
-      "addressRegion": "Cáceres",
-      "addressCountry": "ES"
-    },
-    "servesCuisine": "Mediterranean",
-    "url": "https://pura-vida-web.vercel.app/"
-  }
-  </script>
 
 </head>
 
@@ -73,18 +31,16 @@ const { title = "Restaurante" } = Astro.props;
 </html>
 
 <script>
-  const observer = new IntersectionObserver(entries => {
+  document.addEventListener("DOMContentLoaded", () => {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("reveal-visible")
+        }
+      })
+    })
 
-  entries.forEach(entry => {
-
-    if (entry.isIntersecting) {
-      entry.target.classList.add("reveal-visible")
-    }
-
+    document.querySelectorAll(".reveal")
+      .forEach(el => observer.observe(el))
   })
-
-})
-
-document.querySelectorAll(".reveal")
-  .forEach(el => observer.observe(el))
 </script>

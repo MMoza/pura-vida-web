@@ -1,0 +1,51 @@
+---
+const {
+  title = "Pura Vida Piscinas Bar",
+  description = "Restaurante y bar de copas en Madroñera (Cáceres). Carta digital accesible mediante QR y reservas.",
+  image = "https://pura-vida-web.vercel.app/images/pura-vida-logo.jpeg",
+  url = "https://pura-vida-web.vercel.app/"
+} = Astro.props;
+---
+
+<title>{title}</title>
+
+<meta name="description" content={description} />
+<meta name="author" content="Miguel Ángel Moza" />
+
+<!-- Open Graph -->
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={image} />
+<meta property="og:type" content="website" />
+<meta property="og:url" content={url} />
+<meta property="og:locale" content="es_ES" />
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={image} />
+
+<!-- Favicon -->
+<link rel="icon" href="/images/pura-vida-logo.jpeg" />
+
+<!-- SEO Local -->
+<meta name="geo.region" content="ES-CC" />
+<meta name="geo.placename" content="Madroñera, Cáceres" />
+
+<!-- Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Restaurant",
+  "name": "Pura Vida Piscinas Bar",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Madroñera",
+    "addressRegion": "Cáceres",
+    "addressCountry": "ES"
+  },
+  "servesCuisine": "Mediterranean",
+  "url": "https://pura-vida-web.vercel.app/"
+}
+</script>

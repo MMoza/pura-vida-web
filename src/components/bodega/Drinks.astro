@@ -1,0 +1,320 @@
+---
+const drinkCards = [
+  {
+    title: "Vinos",
+    subtitle: "El maridaje perfecto",
+    href: "/bebidas/vinos",
+    layouts: { mobile: "wide", md: "tall", lg: "tall" },
+    className:
+      "col-span-2 min-h-[9.5rem] min-[560px]:col-span-1 min-[560px]:col-start-1 min-[560px]:row-start-1 min-[560px]:row-span-2 min-[560px]:min-h-[20rem] lg:col-start-1 lg:row-start-1 lg:row-span-2 lg:min-h-[22rem]",
+    accentClass: "bg-gradient-to-br from-rose-50/72 via-white/58 to-white/42",
+    imagePath: "/drinks/wines.avif",
+    imageClass:
+      "bg-[radial-gradient(circle_at_20%_20%,rgba(190,24,93,0.18),transparent_35%),linear-gradient(135deg,rgba(136,19,55,0.18),rgba(255,255,255,0.22))]",
+  },
+  {
+    title: "Cervezas",
+    subtitle: "Siempre bien frías",
+    href: "/bebidas/cervezas",
+    layouts: { mobile: "tall", md: "wide", lg: "wide" },
+    className:
+      "row-span-2 min-h-[10.25rem] min-[560px]:col-span-2 min-[560px]:col-start-2 min-[560px]:row-start-1 min-[560px]:row-span-1 min-[560px]:min-h-[9.5rem] lg:col-span-2 lg:col-start-2 lg:row-start-1",
+    accentClass: "bg-gradient-to-br from-amber-50/72 via-white/58 to-white/42",
+    imagePath: "/drinks/beers.jpg",
+    imageClass:
+      "bg-[radial-gradient(circle_at_30%_30%,rgba(217,119,6,0.18),transparent_32%),linear-gradient(135deg,rgba(180,83,9,0.2),rgba(255,255,255,0.22))]",
+  },
+  {
+    title: "Refrescos",
+    subtitle: "Con hielo y sin prisa",
+    href: "/bebidas/refrescos",
+    layouts: { mobile: "single", md: "hidden", lg: "single" },
+    className: "min-h-[10.25rem] min-[560px]:hidden lg:block lg:col-start-3 lg:row-start-2 lg:min-h-[9.5rem]",
+    accentClass: "bg-gradient-to-br from-sky-50/72 via-white/58 to-white/42",
+    imagePath: "/drinks/coke.jpeg",
+    imageClass:
+      "bg-[radial-gradient(circle_at_30%_25%,rgba(14,165,233,0.16),transparent_30%),linear-gradient(160deg,rgba(186,230,253,0.72),rgba(255,255,255,0.44)_60%,rgba(255,255,255,0.9))]",
+  },
+  {
+    title: "Otros",
+    subtitle: "Elige variedad",
+    href: "/bebidas/otros",
+    layouts: { mobile: "single", md: "tall", lg: "single" },
+    className:
+      "min-h-[10.25rem] min-[560px]:col-start-3 min-[560px]:row-start-2 min-[560px]:row-span-2 min-[560px]:min-h-[9.5rem] lg:col-start-3 lg:row-start-3 lg:row-span-1",
+    accentClass: "bg-gradient-to-br from-emerald-50/72 via-white/58 to-white/42",
+    imagePath: "/drinks/other-drinks.webp",
+    imageClass:
+      "bg-[radial-gradient(circle_at_35%_20%,rgba(16,185,129,0.16),transparent_32%),linear-gradient(160deg,rgba(209,250,229,0.72),rgba(255,255,255,0.44)_60%,rgba(255,255,255,0.9))]",
+  },
+  {
+    title: "Combinados",
+    subtitle: "La sobremesa y el relío",
+    href: "/bebidas/combinados",
+    layouts: { mobile: "wide", md: "wide", lg: "wide" },
+    className:
+      "col-span-2 min-h-[8.5rem] row-start-4 min-[560px]:block min-[560px]:col-span-2 min-[560px]:col-start-1 min-[560px]:row-start-3 min-[560px]:min-h-[9.5rem] lg:col-span-2 lg:col-start-1 lg:row-start-3",
+    accentClass: "bg-gradient-to-br from-orange-50/72 via-white/58 to-white/42",
+    imagePath: "/drinks/gin.jpg",
+    imageClass:
+      "bg-[radial-gradient(circle_at_30%_30%,rgba(249,115,22,0.16),transparent_32%),linear-gradient(135deg,rgba(194,65,12,0.18),rgba(255,255,255,0.22))]",
+  },
+  {
+    title: "Cafés",
+    subtitle: "Solo, cortado y con leche.",
+    href: "/bebidas/cafes",
+    layouts: { mobile: "hidden", md: "hidden", lg: "single" },
+    className: "hidden",
+    accentClass: "bg-gradient-to-br from-stone-100/72 via-white/58 to-white/42",
+    imagePath: "/drinks/cooffe.jpg",
+    imageClass:
+      "bg-[radial-gradient(circle_at_30%_18%,rgba(120,113,108,0.18),transparent_28%),radial-gradient(circle_at_72%_22%,rgba(214,211,209,0.28),transparent_30%),linear-gradient(165deg,rgba(231,229,228,0.76),rgba(255,255,255,0.48)_58%,rgba(255,255,255,0.9))]",
+  },
+];
+---
+
+<section
+  id="drinks"
+  class="section section-bg max-w-3xl mx-auto min-h-[calc(100svh-88px)] px-4 py-8 min-[560px]:py-12"
+>
+  <div class="menu-indicator"></div>
+
+  <div class="text-left mb-6 min-[560px]:mb-10">
+    <h2 class="text-3xl min-[560px]:text-4xl font-display font-semibold text-gray-900">
+      Bebidas
+    </h2>
+
+    <p class="text-gray-600 mt-2 text-sm min-[560px]:text-base">
+      No te quedes con sed
+    </p>
+  </div>
+
+  <div class="grid grid-cols-2 grid-rows-[auto_auto_auto_auto] gap-3 min-[560px]:grid-cols-3 min-[560px]:grid-rows-3 min-[560px]:gap-4 min-[560px]:auto-rows-fr lg:grid-cols-3 lg:grid-rows-3">
+    {
+      drinkCards.map(
+        ({ title, subtitle, href, layouts, className, accentClass, imageClass, imagePath }) => (
+        <a
+          href={href}
+          aria-label={`Ir a ${title}`}
+          class:list={[
+            "group relative block cursor-pointer overflow-hidden rounded-[1.75rem] border border-white/70 bg-white/72 shadow-[0_12px_40px_rgba(35,48,39,0.08)] backdrop-blur-sm transition-all duration-300 ease-out hover:-translate-y-1 hover:border-white hover:shadow-[0_18px_48px_rgba(35,48,39,0.14)]",
+            className,
+          ]}
+        >
+          {layouts.mobile === "wide" && (
+            <div class="grid h-full grid-cols-2 gap-0 min-[560px]:hidden">
+              <div class="relative min-h-[8.25rem] h-full overflow-hidden">
+                <div
+                  class="absolute inset-0 bg-cover bg-center"
+                  style={`background-image: url('${imagePath}')`}
+                ></div>
+                <div class:list={["absolute inset-0", accentClass, imageClass]}></div>
+              </div>
+              <div class="flex h-full flex-col justify-between p-4 min-[560px]:p-5">
+                <div>
+                  <h3 class="text-xl font-display text-gray-900">{title}</h3>
+                  <p class="mt-2 max-w-[22ch] text-sm leading-6 text-gray-600">
+                    {subtitle}
+                  </p>
+                </div>
+                <span class="mt-6 inline-flex w-full items-center justify-end gap-2 text-right text-sm font-medium text-gray-700 transition-colors duration-300 group-hover:text-gray-950">
+                  <span>Ver más</span>
+                  <span aria-hidden="true" class="transition-transform duration-300 group-hover:translate-x-1">→</span>
+                </span>
+              </div>
+            </div>
+          )}
+
+          {layouts.mobile === "tall" && (
+            <div class="flex h-full flex-col min-[560px]:hidden">
+              <div class="relative min-h-[7.5rem] flex-1 overflow-hidden">
+                <div
+                  class="absolute inset-0 bg-cover bg-center"
+                  style={`background-image: url('${imagePath}')`}
+                ></div>
+                <div class:list={["absolute inset-0", accentClass, imageClass]}></div>
+              </div>
+              <div class="flex flex-col justify-between p-4 min-[560px]:p-5">
+                <div>
+                  <h3 class="text-xl font-display text-gray-900">{title}</h3>
+                  <p class="mt-2 text-sm leading-6 text-gray-600">{subtitle}</p>
+                </div>
+                <span class="mt-6 inline-flex w-full items-center justify-end gap-2 text-right text-sm font-medium text-gray-700 transition-colors duration-300 group-hover:text-gray-950">
+                  <span>Ver más</span>
+                  <span aria-hidden="true" class="transition-transform duration-300 group-hover:translate-x-1">→</span>
+                </span>
+              </div>
+            </div>
+          )}
+
+          {layouts.mobile === "single" && (
+            <div class="relative flex h-full min-h-[10.25rem] flex-col justify-end min-[560px]:hidden">
+              <div
+                class="absolute inset-0 bg-cover bg-center"
+                style={`background-image: url('${imagePath}')`}
+              ></div>
+              <div class:list={["absolute inset-0", accentClass, imageClass]}></div>
+              <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-white via-white/92 via-45% to-transparent"></div>
+              <div class="relative z-10 p-4 min-[560px]:p-5">
+                <h3 class="text-xl font-display text-gray-900">{title}</h3>
+                <p class="mt-1 max-w-[18ch] text-sm leading-5 text-gray-700">
+                  {subtitle}
+                </p>
+                <span class="mt-4 inline-flex w-full items-center justify-end gap-2 text-right text-sm font-medium text-gray-700 transition-colors duration-300 group-hover:text-gray-950">
+                  <span>Ver más</span>
+                  <span aria-hidden="true" class="transition-transform duration-300 group-hover:translate-x-1">→</span>
+                </span>
+              </div>
+            </div>
+          )}
+
+          {layouts.md === "wide" && (
+            <div class="hidden h-full gap-0 min-[560px]:grid min-[560px]:grid-cols-2 lg:hidden">
+              <div class="relative min-h-full overflow-hidden">
+                <div
+                  class="absolute inset-0 bg-cover bg-center"
+                  style={`background-image: url('${imagePath}')`}
+                ></div>
+                <div class:list={["absolute inset-0", accentClass, imageClass]}></div>
+              </div>
+              <div class="flex h-full flex-col justify-between p-6">
+                <div>
+                  <h3 class="text-2xl font-display text-gray-900">{title}</h3>
+                  <p class="mt-2 max-w-[22ch] text-sm leading-6 text-gray-600">
+                    {subtitle}
+                  </p>
+                </div>
+                <span class="mt-6 inline-flex w-full items-center justify-end gap-2 text-right text-sm font-medium text-gray-700 transition-colors duration-300 group-hover:text-gray-950">
+                  <span>Ver más</span>
+                  <span aria-hidden="true" class="transition-transform duration-300 group-hover:translate-x-1">→</span>
+                </span>
+              </div>
+            </div>
+          )}
+
+          {layouts.md === "tall" && (
+            <div class="hidden h-full flex-col min-[560px]:flex lg:hidden">
+              <div class="relative min-h-[10rem] flex-1 overflow-hidden">
+                <div
+                  class="absolute inset-0 bg-cover bg-center"
+                  style={`background-image: url('${imagePath}')`}
+                ></div>
+                <div class:list={["absolute inset-0", accentClass, imageClass]}></div>
+              </div>
+              <div class="flex flex-col justify-between p-6">
+                <div>
+                  <h3 class="text-2xl font-display text-gray-900">{title}</h3>
+                  <p class="mt-2 text-sm leading-6 text-gray-600">{subtitle}</p>
+                </div>
+                <span class="mt-6 inline-flex w-full items-center justify-end gap-2 text-right text-sm font-medium text-gray-700 transition-colors duration-300 group-hover:text-gray-950">
+                  <span>Ver más</span>
+                  <span aria-hidden="true" class="transition-transform duration-300 group-hover:translate-x-1">→</span>
+                </span>
+              </div>
+            </div>
+          )}
+
+          {layouts.md === "single" && (
+            <div class="relative hidden h-full flex-col justify-end min-[560px]:flex lg:hidden">
+              <div
+                class="absolute inset-0 bg-cover bg-center"
+                style={`background-image: url('${imagePath}')`}
+              ></div>
+              <div class:list={["absolute inset-0", accentClass, imageClass]}></div>
+              <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-white via-white/92 via-45% to-transparent"></div>
+              <div class="relative z-10 p-5">
+                <h3 class="text-xl font-display text-gray-900">{title}</h3>
+                <p class="mt-1 max-w-[18ch] text-sm leading-5 text-gray-700">
+                  {subtitle}
+                </p>
+                <span class="mt-4 inline-flex w-full items-center justify-end gap-2 text-right text-sm font-medium text-gray-700 transition-colors duration-300 group-hover:text-gray-950">
+                  <span>Ver más</span>
+                  <span aria-hidden="true" class="transition-transform duration-300 group-hover:translate-x-1">→</span>
+                </span>
+              </div>
+            </div>
+          )}
+
+          {layouts.lg === "wide" && (
+            <div class="hidden h-full gap-0 lg:grid lg:grid-cols-2">
+              <div class="relative min-h-full overflow-hidden">
+                <div
+                  class="absolute inset-0 bg-cover bg-center"
+                  style={`background-image: url('${imagePath}')`}
+                ></div>
+                <div class:list={["absolute inset-0", accentClass, imageClass]}></div>
+              </div>
+              <div class="flex h-full flex-col justify-between p-6">
+                <div>
+                  <h3 class="text-2xl font-display text-gray-900">{title}</h3>
+                  <p class="mt-2 max-w-[22ch] text-sm leading-6 text-gray-600">
+                    {subtitle}
+                  </p>
+                </div>
+                <span class="mt-6 inline-flex w-full items-center justify-end gap-2 text-right text-sm font-medium text-gray-700 transition-colors duration-300 group-hover:text-gray-950">
+                  <span>Ver más</span>
+                  <span aria-hidden="true" class="transition-transform duration-300 group-hover:translate-x-1">→</span>
+                </span>
+              </div>
+            </div>
+          )}
+
+          {layouts.lg === "tall" && (
+            <div class="hidden h-full flex-col lg:flex">
+              <div class="relative min-h-[10rem] flex-1 overflow-hidden">
+                <div
+                  class="absolute inset-0 bg-cover bg-center"
+                  style={`background-image: url('${imagePath}')`}
+                ></div>
+                <div class:list={["absolute inset-0", accentClass, imageClass]}></div>
+              </div>
+              <div class="flex flex-col justify-between p-6">
+                <div>
+                  <h3 class="text-2xl font-display text-gray-900">{title}</h3>
+                  <p class="mt-2 text-sm leading-6 text-gray-600">{subtitle}</p>
+                </div>
+                <span class="mt-6 inline-flex w-full items-center justify-end gap-2 text-right text-sm font-medium text-gray-700 transition-colors duration-300 group-hover:text-gray-950">
+                  <span>Ver más</span>
+                  <span aria-hidden="true" class="transition-transform duration-300 group-hover:translate-x-1">→</span>
+                </span>
+              </div>
+            </div>
+          )}
+
+          {layouts.lg === "single" && (
+            <div class="relative hidden h-full flex-col justify-end lg:flex">
+              <div
+                class="absolute inset-0 bg-cover bg-center"
+                style={`background-image: url('${imagePath}')`}
+              ></div>
+              <div class:list={["absolute inset-0", accentClass, imageClass]}></div>
+              <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-white via-white/94 via-50% to-transparent"></div>
+              <div class="relative z-10 p-5">
+                <h3 class="text-xl font-display text-gray-900">{title}</h3>
+                <p class="mt-1 max-w-[16ch] text-sm leading-5 text-gray-700">
+                  {subtitle}
+                </p>
+                <span class="mt-4 inline-flex w-full items-center justify-end gap-2 text-right text-sm font-medium text-gray-700 transition-colors duration-300 group-hover:text-gray-950">
+                  <span>Ver más</span>
+                  <span aria-hidden="true" class="transition-transform duration-300 group-hover:translate-x-1">→</span>
+                </span>
+              </div>
+            </div>
+          )}
+        </a>
+      ))
+    }
+
+    <div class="relative hidden overflow-hidden rounded-[1.75rem] min-[560px]:block min-[560px]:col-start-2 min-[560px]:row-start-2 lg:col-span-1 lg:col-start-2 lg:row-start-2 z-20">
+      <img
+        src="/images/pura-vida-logo.jpeg"
+        alt="Pura Vida"
+        class="h-full w-full scale-110 object-cover opacity-90 [mask-image:radial-gradient(circle_at_center,black_54%,rgba(0,0,0,0.82)_52%,transparent_98%)] [-webkit-mask-image:radial-gradient(circle_at_center,black_34%,rgba(0,0,0,0.82)_52%,transparent_78%)]"
+      />
+      <div class="pointer-events-none absolute inset-0 backdrop-blur-[20px] [mask-image:radial-gradient(circle_at_center,transparent_28%,rgba(0,0,0,0.55)_52%,black_100%)] [-webkit-mask-image:radial-gradient(circle_at_center,transparent_28%,rgba(0,0,0,0.55)_52%,black_100%)]"></div>
+      <div class="pointer-events-none absolute -inset-6 backdrop-blur-[20px] [mask-image:radial-gradient(circle_at_center,transparent_46%,rgba(0,0,0,0.68)_70%,black_100%)] [-webkit-mask-image:radial-gradient(circle_at_center,transparent_46%,rgba(0,0,0,0.68)_70%,black_100%)]"></div>
+      <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0)_28%,rgba(238,247,241,0.34)_56%,#eef7f1_88%)]"></div>
+      <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.05)_0%,rgba(255,255,255,0)_46%)]"></div>
+    </div>
+  </div>
+</section>

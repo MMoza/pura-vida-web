@@ -1,0 +1,140 @@
+---
+import DrinkSectionPage from "../../components/bodega/DrinkSectionPage.astro";
+import { drinkSectionsBySlug } from "../../utils/drinkSections";
+
+const section = drinkSectionsBySlug.refrescos;
+const shelves = [
+  {
+    title: "Refrescos clásicos",
+    subtitle: "Los de siempre, bien fríos y listos para cualquier comida o aperitivo.",
+    items: [
+      {
+        name: "Coca Cola",
+        description: "",
+        price: "2,20 €",
+        image: section.imagePath,
+        badge: "237 ml",
+      },
+      {
+        name: "Coca Cola 0",
+        description: "",
+        price: "2,20 €",
+        image: "/drinks/section/soda/cola-zero.jpg",
+        badge: "237 ml",
+      },
+      {
+        name: "Coca Cola 00",
+        description: "",
+        price: "2,20 €",
+        image: "/drinks/section/soda/cola-zero-zero.webp",
+        badge: "237 ml",
+      },
+      {
+        name: "Fanta naranja",
+        description: "",
+        price: "2,20 €",
+        image: "/drinks/section/soda/fanta-n.jpg",
+        badge: "237 ml",
+      },
+      {
+        name: "Fanta limón",
+        description: "",
+        price: "2,20 €",
+        image: "/drinks/section/soda/fanta-l.jpg",
+        badge: "237 ml",
+      },
+      {
+        name: "Sprite",
+        description: "",
+        price: "2,20 €",
+        image: "/drinks/section/soda/sprite.webp",
+        badge: "237 ml",
+      },
+      {
+        name: "Tónica",
+        description: "",
+        price: "2,20 €",
+        image: "/drinks/section/soda/tonic.jpg",
+        badge: "200 ml",
+      },
+      {
+        name: "Trina naranja",
+        description: "",
+        price: "2,20 €",
+        image: "/drinks/section/soda/trina-n.jpg",
+        badge: "200 ml",
+      },
+    ],
+  },
+  {
+    title: "Tés e isotónicas",
+    subtitle: "Alternativas más suaves o funcionales para hidratarse con algo de sabor.",
+    items: [
+      {
+        name: "Fuze Tea",
+        description: "",
+        price: "2,40 €",
+        image: "/drinks/section/soda/fuzetea.webp",
+        badge: "300ml",
+      },
+      {
+        name: "Fuze Tea maracuyá",
+        description: "",
+        price: "2,40 €",
+        image: "/drinks/section/soda/fuzetea-m.webp",
+        badge: "300ml",
+      },
+      {
+        name: "Aquarius limón",
+        description: "",
+        price: "2,40 €",
+        image: "/drinks/section/soda/aquarius.webp",
+        badge: "300ml",
+      },
+      {
+        name: "Aquarius naranja",
+        description: "",
+        price: "2,40 €",
+        image: "/drinks/section/soda/aquarius-n.webp",
+        badge: "300ml",
+      },
+    ],
+  },
+  {
+    title: "Zumos y energía",
+    subtitle: "Opciones rápidas para desayuno, media tarde o un empujón extra.",
+    items: [
+      {
+        name: "Zumo piña",
+        description: "",
+        price: "2,20 €",
+        image: "/drinks/section/soda/zumo-pina.jpg",
+        badge: "Zumo",
+      },
+      {
+        name: "Zumo melocotón",
+        description: "",
+        price: "2,20 €",
+        image: "/drinks/section/soda/zumo-melocoton.jpeg",
+        badge: "Zumo",
+      },
+      {
+        name: "Batido chocolate",
+        description: "",
+        price: "2,20 €",
+        image: "/drinks/section/soda/batido-choco.png",
+        badge: "Batido",
+      },
+      {
+        name: "Red Bull",
+        description: "",
+        price: "2,50 €",
+        image: "/drinks/section/soda/redull.png",
+        badge: "Energy drink",
+      },
+    ],
+  },
+];
+---
+
+<DrinkSectionPage section={section} shelves={shelves} />

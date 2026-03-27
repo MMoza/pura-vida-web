@@ -1,0 +1,215 @@
+---
+import DrinkSectionPage from "../../components/bodega/DrinkSectionPage.astro";
+import { drinkSectionsBySlug } from "../../utils/drinkSections";
+
+const section = drinkSectionsBySlug.combinados;
+const shelves = [
+  {
+    title: "Ginebra premium",
+    subtitle: "Copas más especiales para quien busca un perfil más cuidado y aromático.",
+    items: [
+      {
+        name: "Martin Miller",
+        description: "",
+        price: "6,50 €",
+        image: "/drinks/section/cocktails/martin-millers.png",
+        badge: "Premium Gin",
+      },
+      {
+        name: "Nordés",
+        description: "",
+        price: "6,50 €",
+        image: "/drinks/section/cocktails/nordes-gin.jpeg",
+        badge: "Premium",
+      },
+      {
+        name: "Brockmans",
+        description: "",
+        price: "7,00 €",
+        image: "/drinks/section/cocktails/brockmans-gin.webp",
+        badge: "Premium",
+      },
+      {
+        name: "Bulldog",
+        description: "",
+        price: "7,00 €",
+        image: "/drinks/section/cocktails/bulldog-gin.webp",
+        badge: "Premium",
+      },
+    ],
+  },
+  {
+    title: "Ginebra",
+    subtitle: "Selección pensada para gin-tonics clásicos y copas limpias.",
+    items: [
+      {
+        name: "Beefeater",
+        description: "",
+        price: "5,00 €",
+        image: "/drinks/section/cocktails/beefeater.avif",
+        badge: "gin",
+      },
+      {
+        name: "Tanqueray",
+        description: "",
+        price: "5,00 €",
+        image: "/drinks/section/cocktails/tanquearay.webp",
+        badge: "gin",
+      },
+      {
+        name: "Seagram's",
+        description: "",
+        price: "5,50 €",
+        image: "/drinks/section/cocktails/seagrams-gin.jpg",
+        badge: "gin",
+      },
+      {
+        name: "Larios",
+        description: "",
+        price: "4,50 €",
+        image: "/drinks/section/cocktails/larios-gin.webp",
+        badge: "gin",
+      },
+      {
+        name: "Puerto de Indias",
+        description: "",
+        price: "5,50 €",
+        image: "/drinks/section/cocktails/puerto-de-indias-gin.jpg",
+        badge: "gin",
+      },
+    ],
+  },
+  {
+    title: "Ron",
+    subtitle: "La base más clásica para combinados largos y sobremesas que se alargan.",
+    items: [
+      {
+        name: "Arehucas",
+        description: "",
+        price: "5,00 €",
+        image: "/drinks/section/cocktails/arehucas-ron.jpg",
+        badge: "Ron añejo",
+      },
+      {
+        name: "Barceló",
+        description: "",
+        price: "5,00 €",
+        image: "/drinks/section/cocktails/barcelo-ron.jpg",
+        badge: "Ron añejo",
+      },
+      {
+        name: "Cacique",
+        description: "",
+        price: "5,00 €",
+        image: "/drinks/section/cocktails/cacique-ron.jpg",
+        badge: "Ron añejo",
+      },
+      {
+        name: "Brugal",
+        description: "",
+        price: "5,00 €",
+        image: "/drinks/section/cocktails/brugal-ron.jpeg",
+        badge: "Ron añejo",
+      },
+      {
+        name: "Bacardí",
+        description: "",
+        price: "5,00 €",
+        image: "/drinks/bacardi-ron.jpeg",
+        badge: "Ron Blanco",
+      },
+      {
+        name: "Legendario",
+        description: "",
+        price: "5,50 €",
+        image: "/drinks/section/cocktails/legendario-ron.jpeg",
+        badge: "Ron añejo",
+      },
+      {
+        name: "Cacique 500",
+        description: "",
+        price: "6,50 €",
+        image: "/drinks/section/cocktails/cacique-500.jpg",
+        badge: "Ron extra añejo",
+      },
+    ],
+  },
+  {
+    title: "Whisky",
+    subtitle: "Clásicos de siempre para combinados largos o copas más serias.",
+    items: [
+      {
+        name: "Ballantine's",
+        description: "",
+        price: "5,00 €",
+        image: "/drinks/section/cocktails/ballantines.webp",
+        badge: "Whisky",
+      },
+      {
+        name: "JB",
+        description: "",
+        price: "5,00 €",
+        image: "/drinks/section/cocktails/jb.webp",
+        badge: "Whisky",
+      },
+      {
+        name: "Red Label",
+        description: "",
+        price: "5,00 €",
+        image: "/drinks/section/cocktails/red-label.jpg",
+        badge: "Whisky",
+      },
+      {
+        name: "Cutty Sark",
+        description: "",
+        price: "5,00 €",
+        image: "/drinks/section/cocktails/cutty-shark.png",
+        badge: "Whisky",
+      },
+      {
+        name: "DYC",
+        description: "",
+        price: "4,50 €",
+        image: "/drinks/section/cocktails/dyc.jpg",
+        badge: "Whisky",
+      },
+      {
+        name: "Jack Daniel's",
+        description: "",
+        price: "6,50 €",
+        image: "/drinks/section/cocktails/jack-daniels.webp",
+        badge: "Whisky",
+      },
+    ],
+  },
+  {
+    title: "Otros",
+    subtitle: "Otras alternativas para mantener el ritual del combinado.",
+    items: [
+      {
+        name: "Tanqueray 0,0",
+        description: "",
+        price: "5,00 €",
+        image: "/drinks/section/cocktails/tanqueray-sin-alcohol-00.jpg",
+        badge: "free alcohol",
+      },
+      {
+        name: "Poneche Caballero",
+        description: "",
+        price: "4,50 €",
+        image: "/drinks/section/cocktails/ponche-caballero.jpg",
+        badge: "Ponche",
+      },
+      {
+        name: "Eristoff",
+        description: "",
+        price: "4,50 €",
+        image: "/drinks/section/cocktails/vodka.webp",
+        badge: "Vodka",
+      }
+    ],
+  }
+];
+---
+
+<DrinkSectionPage section={section} shelves={shelves} />

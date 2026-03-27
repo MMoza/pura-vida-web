@@ -1,0 +1,117 @@
+---
+import DrinkSectionPage from "../../components/bodega/DrinkSectionPage.astro";
+import { drinkSectionsBySlug } from "../../utils/drinkSections";
+
+const section = drinkSectionsBySlug.vinos;
+const shelves = [
+  {
+    title: "De la tierra",
+    subtitle: "Referencias cercanas para una carta con identidad propia.",
+    items: [
+      {
+        name: "Viña Puebla",
+        description: "De Puebla de Sancho Pérez; tinto crianza con uvas Tempranillo, Cabernet Sauvignon, Syrah y Garnacha común.",
+        price: "16,50 €",
+        glassPrice: "2,50 €",
+        image: "/drinks/section/wines/vina-puebla.png",
+        badge: "Toribio",
+      },
+      {
+        name: "Habla la Tierra",
+        description: "De Trujillo; tinto crianza con uvas Tempranillo, Cabernet Sauvignon y Syrah.",
+        price: "17,50 €",
+        image: "/drinks/section/wines/habla-tierra.jpg",
+        badge: "Habla",
+      },
+      {
+        name: "Primavera",
+        description: "De Tierra de Barros; vino blanco joven de aguja, semidulce, con uva Chardonnay.",
+        price: "13,00 €",
+        glassPrice: "2,00 €",
+        image: "/drinks/section/wines/primavera.jpg",
+        badge: "Sani",
+      },
+      {
+        name: "Árabe",
+        description: "De Tierra de Barros; el dulce de la familia Sani, vino blanco con uva Sauvignon Blanc.",
+        price: "13,00 €",
+        glassPrice: "2,00 €",
+        image: "/drinks/section/wines/arabe-wine.jpg",
+        badge: "sani",
+      },
+    ],
+  },
+  {
+    title: "Del Duero",
+    subtitle: "Tintos con más estructura para carnes, quesos y sobremesas largas.",
+    items: [
+      {
+        name: "Melior",
+        description: "De Valbuena de Duero; vino tinto de roble con crianza en barrica y uva 100% Tempranillo.",
+        price: "17,00 €",
+        glassPrice: "2,50 €",
+        image: "/drinks/section/wines/melior-wine.webp",
+        badge: "Matarromera",
+      },
+      {
+        name: "PradoRey Origen",
+        description: "De Burgos; vino tinto con crianza mixta en barrica y tinaja de barro, con uvas Tempranillo y toques de Cabernet Sauvignon y Merlot.",
+        price: "18,50 €",
+        image: "/drinks/section/wines/pradorey-wine.webp",
+        badge: "Pradorey",
+      },
+      {
+        name: "Finca Resalso",
+        description: "De Pesquera de Duero; vino tinto joven crianza con uva 100% Tempranillo.",
+        price: "18,50 €",
+        image: "/drinks/section/wines/fincaresalso-wine.webp",
+        badge: "Emilio Moro",
+      },
+    ],
+  },
+  {
+    title: "De la Rioja",
+    subtitle: "Tintos clásicos y redondos para quienes buscan referencias más tradicionales.",
+    items: [
+      {
+        name: "Antaño",
+        description: "De Labastida; vino tinto crianza de al menos 12 meses con uva Tempranillo y toques de Graciano y Mazuelo.",
+        price: "13,50 €",
+        glassPrice: "2,00 €",
+        image: "/drinks/section/wines/antano-wine.webp",
+        badge: "García Carrión",
+      },
+      {
+        name: "Ramón Bilbao",
+        description: "De Haro; un tinto clásico renovado, crianza en barricas de roble americano con uvas 100% Tempranillo.",
+        price: "18,50 €",
+        image: "/drinks/section/wines/ramonbilbao-wine.png",
+        badge: "Ramón Bilbao",
+      },
+      {
+        name: "Azpilicueta",
+        description: "Tinto riojano con crianza y perfil clásico para quien busca una referencia más seria.",
+        price: "18,50 €",
+        image: "/drinks/section/wines/azpilicueta-wine.jpg",
+        badge: "crianza",
+      },
+    ],
+  },
+  {
+    title: "Rueda",
+    subtitle: "Blancos secos y aromáticos para aperitivos, pescados y platos más ligeros.",
+    items: [
+      {
+        name: "Casa de Luz",
+        description: "Blanco Verdejo seco, fresco y directo para aperitivos, pescados y platos ligeros.",
+        price: "13,00 €",
+        glassPrice: "2,00 €",
+        image: "/drinks/section/wines/rueda-wine.webp",
+        badge: "Blanco verdejo",
+      },
+    ],
+  },
+];
+---
+
+<DrinkSectionPage section={section} shelves={shelves} />

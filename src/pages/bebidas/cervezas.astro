@@ -1,0 +1,126 @@
+---
+import DrinkSectionPage from "../../components/bodega/DrinkSectionPage.astro";
+import { drinkSectionsBySlug } from "../../utils/drinkSections";
+
+const section = drinkSectionsBySlug.cervezas;
+const shelves = [
+  {
+    title: "Del barril",
+    subtitle: "La selección más directa y fresca para servir al momento.",
+    items: [
+      {
+        name: "Caña",
+        description: "",
+        price: "1,50 €",
+        image: "/drinks/section/beers/cana-mahou.jpg",
+        badge: "Mahou",
+      },
+      {
+        name: "Tubo",
+        description: "",
+        price: "1,90 €",
+        image: "/drinks/section/beers/tubo-mahou.jpg",
+        badge: "Mahou",
+      },
+      {
+        name: "Copón",
+        description: "",
+        price: "2,10 €",
+        image: "/drinks/section/beers/copon-mahou.jpg",
+        badge: "Mahou",
+      },
+      {
+        name: "Jarra de barro",
+        description: "",
+        price: "2,90 €",
+        image: section.imagePath,
+        badge: "Mahou",
+      },
+    ],
+  },
+  {
+    title: "En botellín",
+    subtitle: "Pequeño formato para una ronda rápida o para picar algo.",
+    items: [
+      {
+        name: "Mahou clásica",
+        description: "",
+        price: "1,50 €",
+        image: "/drinks/section/beers/mahou-clasica.jpg",
+        badge: "1/5 l",
+      },
+      {
+        name: "Amstel",
+        description: "",
+        price: "1,50 €",
+        image: "/drinks/section/beers/amstel.jpg",
+        badge: "1/5 l",
+      },
+      {
+        name: "Radler",
+        description: "",
+        price: "1,60 €",
+        image: "/drinks/section/beers/radler.jpg",
+        badge: "1/5 l",
+      },
+      {
+        name: "0,0 Tostada",
+        description: "",
+        price: "1,60 €",
+        image: "/drinks/section/beers/mahou-00-tostada.jpg",
+        badge: "1/5 l",
+      },
+      {
+        name: "Sin alcohol",
+        description: "",
+        price: "1,60 €",
+        image: "/drinks/section/beers/sin.jpg",
+        badge: "1/5 l",
+      },
+    ],
+  },
+  {
+    title: "En tercio",
+    subtitle: "Formatos clásicos para mantener el frío y el ritmo.",
+    items: [
+      {
+        name: "Mahou 5*",
+        description: "",
+        price: "2,50 €",
+        image: "/drinks/section/beers/tercio-mahou.jpg",
+        badge: "Tercio",
+      },
+      {
+        name: "Alhambra 1925",
+        description: "M",
+        price: "2,50 €",
+        image: "/drinks/section/beers/tercio-alhambra.jpg",
+        badge: "Tercio",
+      },
+      {
+        name: "Estrella Galicia",
+        description: "",
+        price: "2,50 €",
+        image: "/drinks/section/beers/tercio-estrella.jpg",
+        badge: "Tercio",
+      },
+      {
+        name: "Coronita",
+        description: ".",
+        price: "2,50 €",
+        image: "/drinks/section/beers/coronita.jpg",
+        badge: "Tercio",
+      },
+      {
+        name: "Mahou Sin Gluten",
+        description: "",
+        price: "2,70 €",
+        image: "/drinks/section/beers/gluten-free.webp",
+        badge: "Tercio",
+      },
+    ],
+  },
+];
+---
+
+<DrinkSectionPage section={section} shelves={shelves} />

@@ -1,0 +1,9 @@
+---
+import DrinkSectionPage from "../../components/bodega/DrinkSectionPage.astro";
+import { drinkSectionsBySlug } from "../../utils/drinkSections";
+
+const section = drinkSectionsBySlug.otros;
+---
+
+<DrinkSectionPage section={section} />
+

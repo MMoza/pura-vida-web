@@ -5,6 +5,7 @@ export const prerender = false
 import { getMenu } from "../../services/menuService";
 import { groupMenuByCategory } from "../../utils/groupMenu";
 import MenuCategory from "./MenuCategory.astro";
+import EmptyMenu from "./EmptyMenu.astro";
 
 const menu = await getMenu();
 
@@ -15,6 +16,8 @@ const categories = Object.keys(grouped).sort(
     grouped[a][0].categoria_orden -
     grouped[b][0].categoria_orden
 )
+
+const hasMenu = menu && menu.length > 0;
 ---
 
 <section id="carta" class="section section-bg max-w-3xl mx-auto px-4 py-12">
@@ -34,53 +37,41 @@ const categories = Object.keys(grouped).sort(
 
   </div>
 
-  <!-- Tabs -->
-
-  <div class="menu-tabs">
-    {
-      categories.map((cat) => (
-        <a
-          href={`#cat-${cat.toLowerCase().replace(/\s+/g, "-")}`}
-          class="menu-tab"
-        >
-          {cat}
-        </a>
-      ))
-    }
-  </div>
-
-  <!-- Categorías -->
-
-  <div class="space-y-12 mt-10">
-    {
-      categories.map((cat) => (
-        <div
-          id={`cat-${cat.toLowerCase().replace(/\s+/g, "-")}`}
-          class="menu-section"
-        >
-          <MenuCategory category={cat} items={grouped[cat]} />
+  {
+    categories.length === 0 ? (
+        <EmptyMenu />
+    ) : (
+      <>
+        <!-- Tabs -->
+        <div class="menu-tabs">
+          {
+            categories.map((cat) => (
+              <a
+                href={`#cat-${cat.toLowerCase().replace(/\s+/g, "-")}`}
+                class="menu-tab"
+              >
+                {cat}
+              </a>
+            ))
+          }
         </div>
-      ))
-    }
-  </div>
 
-  <!-- Bodega -->
-  <!-- <div class="text-center mt-20">
-    <a 
-      class="group inline-flex items-center gap-2 text-lg md:text-base font-medium text-gray-900 
-            transition-all duration-300 hover:text-black cursor-pointer"
-      href="/bodega"
-    >
-      <span class="relative">
-        Ver bodega
-        <span class="absolute left-0 -bottom-1 h-[2px] w-0 bg-black transition-all duration-300 group-hover:w-full"></span>
-      </span>
-
-      <span class="hero-arrow transition-transform duration-300 group-hover:translate-x-2">
-        →
-      </span>
-    </a>
-  </div> -->
+        <!-- Categorías -->
+        <div class="space-y-12 mt-10">
+          {
+            categories.map((cat) => (
+              <div
+                id={`cat-${cat.toLowerCase().replace(/\s+/g, "-")}`}
+                class="menu-section"
+              >
+                <MenuCategory category={cat} items={grouped[cat]} />
+              </div>
+            ))
+          }
+        </div>
+      </>
+    )
+  }
 
 </section>
 

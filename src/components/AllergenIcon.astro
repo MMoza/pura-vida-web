@@ -4,6 +4,7 @@ import Lactosa from "../../public/icons/allergens/Lactosa.astro"
 import Huevo from "../../public/icons/allergens/Huevo.astro"
 import Pescado from "../../public/icons/allergens/Pescado.astro"
 import Moluscos from "../../public/icons/allergens/Moluscos.astro"
+import FrutosSecos from "../../public/icons/allergens/FrutosSecos.astro"
 
 
 const { type } = Astro.props
@@ -13,7 +14,8 @@ const icons = {
   lactosa: Lactosa,
   huevo: Huevo,
   pescado: Pescado,
-  moluscos: Moluscos
+  moluscos: Moluscos,
+  frutosSecos: FrutosSecos,
 }
 
 const Icon = icons[type]

@@ -4,7 +4,11 @@ import vercel from "@astrojs/vercel";
 import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
-  adapter: vercel(),
+  adapter: vercel({
+    webAnalytics: {
+      enabled: true,
+    },
+  }),
   site: 'https://pura-vida-web.vercel.app',
   integrations: [sitemap()],
   vite: {
